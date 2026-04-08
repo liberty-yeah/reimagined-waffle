@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Brancher</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <div class="header-left">
+                <h1>Story Brancher</h1>
+                <span class="version" id="version-display">V</span>
+                <label style="margin-left: 20px; font-size: 0.85rem; cursor: pointer;">
+                    <input type="checkbox" id="flexi-toggle" onchange="toggleFlexi()"> Flexi Move
+                </label>
+            </div>
+            <div class="header-right">
+                <button class="clear-btn" onclick="clearAll()">Clear All</button>
+                <button onclick="exportJSON()">Export JSON</button>
+                <button onclick="document.getElementById('import-input').click()">Import JSON</button>
+                <input type="file" id="import-input" style="display:none" onchange="importJSON(event)" accept=".json">
+            </div>
+        </header>
+        <div id="tree-container">
+            <!-- Tree will be rendered here -->
+        </div>
+    </div>
+    <!-- Load logic in order -->
+    <script src="tree-logic.js"></script>
+    <script src="ui-logic.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

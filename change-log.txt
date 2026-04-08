@@ -1,0 +1,38 @@
+Version 0.1.0:
+- Hierarchical node structure for branching user stories.
+- Add/Delete nodes.
+- Text content
+- Data persistence via LocalStorage.
+
+Version 0.1.1:
+- Improved space efficiency.
+- Keyboard Shortcuts for Navigation & Structure:
+    - Enter: Newline.
+    - Shift + Enter: Add sibling.
+    - Ctrl + Enter: Add child.
+    - Up/Down Arrow: Move selection (same level).
+    - Right/Left Arrow: Move selection (nesting).
+    - Ctrl + Up/Down: Reorder node among siblings.
+    - Ctrl + Right: Nest node under sibling above.
+    - Ctrl + Left: Unnest node.
+- Clipboard Operations:
+    - Ctrl + C / Ctrl + X: Copy / Cut node.
+    - Ctrl + V: Paste node below selected.
+    - Ctrl + D: Duplicate node.
+- JSON Import/Export.
+
+Version 0.2.0:
+- Clear All functionality.
+- Removed attachement system
+- Collapsible Branches:
+    - Nodes with children can be collapsed/expanded.
+    - Shortcut Ctrl + 0: Global Collapse/Uncollapse by depth.
+- Flexi Move Toggle:
+    - When enabled, Up/Down arrows move through the tree linearly (visual order) regardless of nesting levels.
+    - Wraps around at top and bottom.
+- Refactored Codebase:
+    - Split JS into tree-logic.js, ui-logic.js, and app.js for better maintainability.
+- Bug Fixes:
+    - Improved ID comparison for more reliable node operations.
+    - Fixed attachment adding logic to ensure dialog closes and tree updates.
+    - Added CapsLock override: When CapsLock is ON, Ctrl+C/X/V/D perform standard text operations instead of node operations.

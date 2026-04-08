@@ -1,0 +1,217 @@
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    color: #1c1e21;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    background: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    z-index: 100;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #007bff;
+}
+
+.version {
+    font-size: 0.8rem;
+    color: #777;
+    margin-left: 10px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-right button {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+}
+
+#tree-container {
+    flex: 1;
+    overflow: auto;
+    padding: 20px;
+}
+
+.node {
+    margin-left: 24px;
+    border-left: 1px solid #ccd0d5;
+    padding-left: 8px;
+    position: relative;
+}
+
+.node-wrapper {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 4px;
+    padding: 4px;
+    border-radius: 4px;
+    transition: background 0.1s;
+}
+
+.node-wrapper:hover {
+    background: #e4e6eb;
+}
+
+.node-wrapper.selected {
+    background: #e7f3ff;
+    border: 1px solid #1877f2;
+}
+
+.node-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+textarea {
+    width: 100%;
+    border: none;
+    background: transparent;
+    resize: none;
+    padding: 4px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    overflow: hidden;
+    min-height: 1.4em;
+    font-family: inherit;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+.attachments {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 4px;
+    padding-left: 4px;
+}
+
+.attachment-link {
+    color: #1877f2;
+    text-decoration: none;
+    font-size: 0.8rem;
+    background: #f0f2f5;
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.attachment-link:hover {
+    background: #e4e6eb;
+}
+
+.node-actions {
+    display: flex;
+    opacity: 0;
+    margin-left: 8px;
+    align-self: flex-start;
+}
+
+.node-wrapper:hover .node-actions, .node-wrapper.selected .node-actions {
+    opacity: 1;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 2px;
+    font-size: 1.1rem;
+    color: #65676b;
+    line-height: 1;
+}
+
+.icon-btn:hover {
+    color: #1c1e21;
+    background: #d8dadf;
+    border-radius: 4px;
+}
+
+button {
+    cursor: pointer;
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+button.clear-btn {
+    background: #dc3545;
+}
+
+button.clear-btn:hover {
+    background: #bd2130;
+}
+
+/* Modal styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    min-width: 300px;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    font-size: 1.1rem;
+}
+
+.modal-actions {
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.collapse-toggle {
+    cursor: pointer;
+    margin-right: 5px;
+    user-select: none;
+    color: #65676b;
+}
+
+.children.collapsed {
+    display: none;
+}
